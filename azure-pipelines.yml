@@ -15,8 +15,8 @@ variables:
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
-  productDockerfilePath: '**/dotnet-kubernetes/Products/Dockerfile'
-  storeDockerfilePath: '**/dotnet-kubernetes/Store/Dockerfile'
+  productDockerfilePath: '**/dotnet-docker/Products/Dockerfile'
+  storeDockerfilePath: '**/dotnet-docker/Store/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'rogerchenacrd3a1-auth'
 
