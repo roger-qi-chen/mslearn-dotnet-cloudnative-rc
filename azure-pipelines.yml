@@ -15,8 +15,8 @@ variables:
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
-  productDockerfilePath: './dotnet-kubernates/Prodcuts/Dockerfile'
-  storeDockerfilePath: './dotnet-kubernates/Store/Dockerfile'
+  productDockerfilePath: '~/dotnet-kubernates/Prodcuts/Dockerfile'
+  storeDockerfilePath: '~/dotnet-kubernates/Store/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'rogerchenacrd3a1-auth'
 
@@ -37,7 +37,7 @@ stages:
     steps:
     # Product
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build and push the product image to container registry
       inputs:
         command: buildAndPush
         repository: $(productImageRepository)
@@ -47,7 +47,7 @@ stages:
           $(tag)
     # Store
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build and push the store image to container registry
       inputs:
         command: buildAndPush
         repository: $(storeImageRepository)
