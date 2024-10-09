@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '25263f26-dd75-43db-bd9b-9de10f161363'
+  dockerRegistryServiceConnection: 'adabf03d-d532-450e-9601-bac04dcbf444'
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
