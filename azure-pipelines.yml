@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'adabf03d-d532-450e-9601-bac04dcbf444'
+  dockerRegistryServiceConnection: 'c897c3ea-e4bf-4073-b671-4ba9ab008f9a'
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
@@ -59,10 +59,10 @@ stages:
         tags: |
           $(tag)
 
-    - script: |
-        echo "Listing all Docker images:"
-        docker images
-      displayName: 'List Docker Images'
+    # - script: |
+    #     echo "Listing all Docker images:"
+    #     docker images
+    #   displayName: 'List Docker Images'
 
     - upload: manifests
       artifact: manifests
