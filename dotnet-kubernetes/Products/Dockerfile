@@ -7,7 +7,7 @@ COPY "DataEntities" .
 RUN dotnet publish -c release -o /app
 
 WORKDIR /src
-COPY Products.csproj .
+COPY Products/Products.csproj .
 RUN dotnet restore
 COPY Products .
 RUN dotnet publish -c release -o /app
