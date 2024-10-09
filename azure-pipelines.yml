@@ -37,17 +37,17 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    # Product
-    - task: Docker@2
-      displayName: Build and push the product image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(productImageRepository)
-        dockerfile: $(productDockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        buildContext: $(productBuildContext)
-        tags: |
-          $(tag)
+    # # Product
+    # - task: Docker@2
+    #   displayName: Build and push the product image to container registry
+    #   inputs:
+    #     command: buildAndPush
+    #     repository: $(productImageRepository)
+    #     dockerfile: $(productDockerfilePath)
+    #     containerRegistry: $(dockerRegistryServiceConnection)
+    #     buildContext: $(productBuildContext)
+    #     tags: |
+    #       $(tag)
     # Store
     - task: Docker@2
       displayName: Build and push the store image to container registry
