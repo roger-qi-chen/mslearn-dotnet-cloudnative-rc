@@ -15,7 +15,6 @@ variables:
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
-  # containerRegistry: 'chenqi830521'
   productDockerfilePath: 'dotnet-kubernetes/Products/Dockerfile'
   storeDockerfilePath: 'dotnet-kubernetes/Store/Dockerfile'
   BuildContext: 'dotnet-kubernetes'

@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 
-WORKDIR /src
+WORKDIR /app
 COPY Store/Store.csproj .
 RUN dotnet restore
 COPY Store .
