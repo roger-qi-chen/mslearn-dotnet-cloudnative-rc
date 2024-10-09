@@ -15,8 +15,10 @@ variables:
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
-  productDockerfilePath: '**/dotnet-kubernetes/Products/Dockerfile'
-  storeDockerfilePath: '**/dotnet-kubernetes/Store/Dockerfile'
+  productDockerfilePath: 'dotnet-kubernetes/Products/Dockerfile'
+  storeDockerfilePath: 'dotnet-kubernetes/Store/Dockerfile'
+  productBuildContext: 'k8s/Products'
+  storeBuildContext: 'k8s/Store'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'rogerchenacrd3a1-auth'
 
@@ -43,6 +45,7 @@ stages:
         repository: $(productImageRepository)
         dockerfile: $(productDockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(productBuildContext)
         tags: |
           $(tag)
     # Store
@@ -53,6 +56,7 @@ stages:
         repository: $(storeImageRepository)
         dockerfile: $(storeDockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
+        buildContext: $(storeBuildContext)
         tags: |
           $(tag)
 
