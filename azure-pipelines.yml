@@ -60,6 +60,11 @@ stages:
         tags: |
           $(tag)
 
+    - script: |
+        echo "Listing all Docker images:"
+        docker images
+      displayName: 'List Docker Images'
+
     - upload: manifests
       artifact: manifests
 
