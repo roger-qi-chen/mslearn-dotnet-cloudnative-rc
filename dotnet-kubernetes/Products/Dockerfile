@@ -9,7 +9,7 @@ RUN dotnet publish -c release -o /app
 WORKDIR /src
 COPY Products.csproj .
 RUN dotnet restore
-COPY . .
+COPY ../Products .
 RUN dotnet publish -c release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
