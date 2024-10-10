@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
     name: productsbackend # Name of the deployment
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
@@ -21,4 +21,10 @@ spec:
   selector:
     matchLabels:
       app: productsbackend
+  ports:
+    - port: 80
+      nodePort:  32001
+      targetPort: 80
+      protocol: TCP
+  type: LoadBalancer
 ---
