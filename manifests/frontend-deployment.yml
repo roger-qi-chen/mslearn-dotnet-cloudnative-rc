@@ -1,9 +1,11 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: storefrontend
+  name: store-frontend-deployment
 spec:
+  selector:
+    matchLabels:
+      app: storefrontend
   replicas: 3
   template:
     metadata:
@@ -12,7 +14,7 @@ spec:
     spec:
       containers:
       - name: storefrontend
-        image: chenqi830521/storeimage:latest
+        image: rogerchenacr.azurecr.io/storeimage:latest
         ports:
         - containerPort: 80
         env:
@@ -20,13 +22,4 @@ spec:
           value: http://*:80
         - name: ProductEndpoint
           value: http://productsbackend
-  selector:
-    matchLabels:
-      app: storefrontend
-  ports:
-    - port: 80
-      nodePort:  32000
-      targetPort: 80
-      protocol: TCP
-  type: LoadBalancer
 ---

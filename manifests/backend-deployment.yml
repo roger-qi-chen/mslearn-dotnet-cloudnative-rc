@@ -1,9 +1,11 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: productsbackend # Name of the deployment
+  name: products-backend-deployment # Name of the deployment
 spec:
+  selector:
+    matchLabels:
+      app: productsbackend
   replicas: 3
   template:
     metadata:
@@ -18,13 +20,4 @@ spec:
         env:
         - name: ASPNETCORE_URLS
           value: http://*:80
-  selector:
-    matchLabels:
-      app: productsbackend
-  ports:
-    - port: 80
-      nodePort:  32001
-      targetPort: 80
-      protocol: TCP
-  type: LoadBalancer
 ---
