@@ -77,7 +77,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'rogerqichenmslearndotnetcloudnativerc.default'
+    environment: 'rogerqichenmslearndotnetcloudnative.default'
     strategy:
       runOnce:
         deploy:
