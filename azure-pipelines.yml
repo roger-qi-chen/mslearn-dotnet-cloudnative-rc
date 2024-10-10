@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c897c3ea-e4bf-4073-b671-4ba9ab008f9a'
+  dockerRegistryServiceConnection: '9ea20e24-6990-49c1-ab29-d2b9431799d1'
   productImageRepository: 'productservice'
   storeImageRepository: 'storeimage'
   containerRegistry: 'rogerchenacr.azurecr.io'
@@ -19,7 +19,7 @@ variables:
   storeDockerfilePath: 'dotnet-kubernetes/Store/Dockerfile'
   BuildContext: 'dotnet-kubernetes'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'rogerchenacrd3a1-auth'
+  imagePullSecret: 'rogerchenacr7477fce0-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -77,7 +77,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'rogerqichenmslearndotnetcloudnative.default'
+    environment: 'rogerqichenmslearndotnetcloudnativerc-1017.eshop'
     strategy:
       runOnce:
         deploy:
