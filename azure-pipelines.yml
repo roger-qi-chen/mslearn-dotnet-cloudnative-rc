@@ -47,6 +47,7 @@ stages:
         buildContext: $(BuildContext)
         tags: |
           $(tag)
+          latest
     # Store
     - task: Docker@2
       displayName: Build and push the store image to container registry
@@ -58,6 +59,7 @@ stages:
         buildContext: $(BuildContext)
         tags: |
           $(tag)
+          latest
 
     # - script: |
     #     echo "Listing all Docker images:"
