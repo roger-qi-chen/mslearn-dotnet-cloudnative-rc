@@ -15,9 +15,9 @@ spec:
         image: rogerchenacr.azurecr.io/productservice:latest
         ports:
         - containerPort: 80
-      env:
-      - name: ASPNETCORE_URLS
-        value: http://*:80
+        env:
+        - name: ASPNETCORE_URLS
+          value: http://*:80
   selector:
     matchLabels:
       app: productsbackend
